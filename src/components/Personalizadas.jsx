@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { Cog, Lightbulb, LineChart } from "lucide-react"
 import { Button } from "./ui/button"
 import { createWhatsappLink } from "../lib/utils"
+import ModalPersonalizados from "./ModalPersonalizados"
 
 const beneficios = [
   {
@@ -71,11 +72,14 @@ export function Personalizadas() {
               Integración con otros sistemas, plantillas o datos existentes.
             </p>
           </div>
-          <Button asChild className="mt-4 w-full sm:w-auto">
-            <a href={whatsappPersonalizadasLink} target="_blank" rel="noreferrer">
-              Solicitar plantilla personalizada
-            </a>
-          </Button>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+            <Button asChild className="w-full sm:w-auto">
+              <a href={whatsappPersonalizadasLink} target="_blank" rel="noreferrer">
+                Solicitar plantilla personalizada
+              </a>
+            </Button>
+            <ModalPersonalizados triggerVariant="default" />
+          </div>
         </motion.div>
 
         <motion.ul

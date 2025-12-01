@@ -68,7 +68,7 @@ export const plantillas = [
             "Microsoft Excel 2016 o superior (versión de escritorio).",
             "No compatibles con Mac, Excel Online ni Google Sheets."
         ],
-        hotmartLink: "https://pay.hotmart.com/M101882205U?bid=ODONTO",
+        hotmartLink: "https://pay.hotmart.com/W95013971D?bid=1729569357065 ",
         whatsappMessage: "Hola Excel Práctico, estoy interesado en la plantilla Gestión Dental Avanzada.",
     },
 

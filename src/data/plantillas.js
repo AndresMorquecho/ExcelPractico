@@ -143,14 +143,13 @@ export const plantillas = [
     personalizacion: "",
     miniatura: "/img/GYM/GymPrincipal.png",
     imagenes: ["/img/GYM/Gym1.jpg", "/img/GYM/Gym2.jpg", "/img/GYM/Gym3.jpg"],
-    videoUrl: "https://www.youtube.com/embed/_v8Bx7CMbvs",
+    videoUrl: "https://www.youtube.com/embed/h4XHwmr6Rzs",
     requisitos: [
       "Windows 10 u 11 (64 bits recomendado).",
       "Microsoft Excel 2016 o superior (versión de escritorio).",
       "No compatibles con Mac, Excel Online ni Google Sheets.",
     ],
-    hotmartLink:
-      "https://pay.hotmart.com/D103245467L?bid=1764737066663",
+    hotmartLink: "https://pay.hotmart.com/D103245467L?bid=1764737066663",
     whatsappMessage:
       "Hola Excel Práctico, me interesa controlar mi gimnasio con la plantilla GymControl Pro Software para Gestión de Gimnasios.",
   },

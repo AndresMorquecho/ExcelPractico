@@ -15,7 +15,7 @@ export const plantillas = [
       "/img/Optica/Optica2.png",
       "/img/Optica/Optica3.png",
     ],
-    videoUrl: "https://www.youtube.com/embed/hMLBdcCDPYU",
+    videoUrl: "https://www.youtube.com/embed/jY9fhPUfM44",
     requisitos: [
       "Windows 10 u 11 (64 bits recomendado).",
       "Microsoft Excel 2016 o superior (versión de escritorio).",

@@ -65,12 +65,12 @@ export function ModalComprar({ hotmartLink, plantillaNombre }) {
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            <Button asChild className="w-full justify-center">
+            <Button asChild className="w-full justify-center bg-orange-500 hover:bg-orange-600 text-white shadow-lg text-base h-12">
               <a href={hotmartLink} target="_blank" rel="noreferrer">
-                Comprar en línea
+                Comprar Ahora
               </a>
             </Button>
-            <Button asChild variant="outline" className="w-full justify-center">
+            <Button asChild variant="outline" className="w-full justify-center text-base h-12">
               <a href={whatsappCompraLink} target="_blank" rel="noreferrer">
                 <MessageCircle className="mr-2 h-4 w-4" />
                 Soy de Ecuador

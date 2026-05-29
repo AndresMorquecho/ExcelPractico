@@ -25,11 +25,11 @@ export function Hero() {
             Excel Práctico
           </span>
           <h1 className="mt-6 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-            Automatiza tu negocio con plantillas profesionales en Excel VBA.
+            Ahorra horas de trabajo manual automatizando tu negocio.
           </h1>
           <p className="mt-6 text-lg text-white/85 sm:text-xl">
-            Desarrolladas por Excel Práctico — sistemas listos para usar, fáciles y eficientes.
-            Optimiza tus procesos en cuestión de minutos.
+            Sistemas profesionales en Excel VBA listos para usar. Olvídate de los errores y 
+            optimiza tus procesos en cuestión de minutos sin pagar mensualidades.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button asChild>

@@ -4,6 +4,8 @@ import Catalogo from "./components/Catalogo"
 import Personalizadas from "./components/Personalizadas"
 import Contacto from "./components/Contacto"
 import Footer from "./components/Footer"
+import Testimonios from "./components/Testimonios"
+import FAQ from "./components/FAQ"
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
       <main className="pt-16">
         <Hero />
         <Catalogo />
+        <Testimonios />
         <Personalizadas />
+        <FAQ />
         <Contacto />
       </main>
       <Footer />

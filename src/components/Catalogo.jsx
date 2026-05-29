@@ -90,9 +90,12 @@ export function Catalogo() {
                         className="aspect-[4/3] w-full object-contain transition duration-500 hover:scale-105"
                         loading="lazy"
                       />
-                      <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold text-excel shadow-sm">
-                        <DollarSign className="h-4 w-4" />
-                        ${plantilla.precio} USD
+                      <div className="absolute left-4 top-4 flex flex-col gap-2">
+                        <div className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-excel shadow-sm">
+                          <DollarSign className="h-4 w-4" />
+                          <span className="line-through text-slate-400 font-medium">${plantilla.precio * 2}</span>
+                          ${plantilla.precio} USD
+                        </div>
                       </div>
                       {plantilla.hotSale && (
                         <div className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white shadow-sm">

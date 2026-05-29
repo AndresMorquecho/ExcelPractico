@@ -1,5 +1,34 @@
 export const plantillas = [
   {
+    id: "ginecologia-vba",
+    nombre: "Sistema Clínico para Ginecólogos en Excel",
+    descripcion:
+      "Administra de forma integral pacientes, historias clínicas, consultas y tratamientos ginecológicos.",
+    descripcionExtendida:
+      "El Sistema Clínico para Ginecólogos en Excel te permite llevar un control detallado de tus pacientes, gestionar historias clínicas, registrar consultas y hacer seguimiento de tratamientos. Ideal para consultorios ginecológicos que buscan digitalizar su gestión de manera rápida, segura y sin complicaciones.",
+    precio: 25,
+    categoria: "Salud",
+    calificacion: 5.0,
+    hotSale: true,
+    ventas: 245,
+    personalizacion: "Se pueden personalizar logos y formatos de impresión para adaptarlo a tu consultorio.",
+    miniatura: "/img/Ginecologia/Principal.png",
+    imagenes: [
+      "/img/Ginecologia/imagen1.png",
+      "/img/Ginecologia/imagen2.png",
+      "/img/Ginecologia/imagen3.png",
+    ],
+    videoUrl: "https://www.youtube.com/embed/ITOTn7qa8Sw",
+    requisitos: [
+      "Windows 10 u 11 (64 bits recomendado).",
+      "Microsoft Excel 2016 o superior (versión de escritorio).",
+      "No compatibles con Mac, Excel Online ni Google Sheets.",
+    ],
+    hotmartLink: "https://pay.hotmart.com/X106052290S",
+    whatsappMessage:
+      "Hola Excel Práctico, deseo conocer más sobre la plantilla Sistema Clínico para Ginecólogos en Excel.",
+  },
+  {
     id: "optica-vba",
     nombre: "Gestión Óptica Plus",
     descripcion:
@@ -7,6 +36,10 @@ export const plantillas = [
     descripcionExtendida:
       "Gestión Óptica Plus te permite gestionar de manera integral tu óptica, desde el registro de pacientes hasta el envío de recetas a laboratorios. Consulta historiales clínicos y graduaciones en cualquier momento, organiza tus citas, controla órdenes, ventas e ingresos por fechas, y lleva un registro detallado de tus laboratorios. Todo desde una interfaz clara, intuitiva y optimizada para tu negocio.",
     precio: 25,
+    categoria: "Salud",
+    calificacion: 4.8,
+    hotSale: true,
+    ventas: 182,
     personalizacion:
       "En esta plantilla puedes editar logo, colores, agregar tipos de lentes, materiales y tratamientos para adaptarla totalmente a tu óptica.",
     miniatura: "/img/Optica/OpticaPrincipal.png",
@@ -34,6 +67,10 @@ export const plantillas = [
     descripcionExtendida:
       "Gestión de Préstamos Plus te permite registrar clientes, crear préstamos con interés sobre capital o cuotas fijas, y administrar cobros parciales o totales. Desde el módulo de pagos puedes imprimir recibos personalizados con el detalle de cada cuota, ver ingresos, próximos cobros y reportes de rendimiento. Ideal para microfinancieras, prestamistas o negocios con créditos recurrentes.",
     precio: 17,
+    categoria: "Finanzas",
+    calificacion: 4.6,
+    hotSale: false,
+    ventas: 95,
     personalizacion: "",
     miniatura: "/img/Prestamo/PrestamoPrincipal.png",
     imagenes: [
@@ -60,6 +97,10 @@ export const plantillas = [
     descripcionExtendida:
       "Gestión Dental Avanzada permite registrar pacientes, realizar consultas y navegar por historiales clínicos anteriores. Incluye odontogramas infantil y adulto completamente editables, impresión del odontograma, control de tratamientos y gestión de cuentas por cobrar. También puedes registrar pagos y generar presupuestos en minutos, todo desde una interfaz práctica y moderna.",
     precio: 25,
+    categoria: "Salud",
+    calificacion: 4.9,
+    hotSale: true,
+    ventas: 210,
     personalizacion: "Se pueden personalizar tipos de tratamientos.",
     miniatura: "/img/Odontologos/OdontologosPrincipal.png",
     imagenes: [
@@ -86,6 +127,10 @@ export const plantillas = [
     descripcionExtendida:
       "Historias Clínicas 360 te permite administrar pacientes, especialidades y consultas médicas con navegación entre historiales. Genera y guarda órdenes de laboratorio, exámenes, recetas y certificados médicos que puedes reimprimir cuando lo necesites. Ideal para consultorios y centros médicos que buscan digitalizar su gestión diaria sin complicaciones.",
     precio: 23,
+    categoria: "Salud",
+    calificacion: 4.7,
+    hotSale: false,
+    ventas: 134,
     personalizacion:
       "Se puede personalizar CIE10, agregar medicamentos, logos y colores en la impresión de cualquier documento.",
     miniatura: "/img/Medicos/MedicosPrincipal.png",
@@ -114,6 +159,10 @@ export const plantillas = [
     descripcionExtendida:
       "Gestión Empresarial y de Inventarios te permite registrar productos con imágenes, clientes, proveedores, compras y ventas. Controla el stock en múltiples bodegas, transfiere inventario entre sucursales, administra cuentas por cobrar y genera reportes de ingresos, gastos y rentabilidad. Una solución integral para el control administrativo de tu negocio.",
     precio: 20,
+    categoria: "Negocios",
+    calificacion: 4.5,
+    hotSale: false,
+    ventas: 87,
     personalizacion: "Personalización de logos.",
     miniatura: "/img/Inventario/InventariosPrincipal.jpg",
     imagenes: [
@@ -140,6 +189,10 @@ export const plantillas = [
     descripcionExtendida:
       "GymControl Pro es un sistema profesional creado en Excel que permite administrar tu gimnasio de forma completa: membresías, vencimientos, actividades, horarios, inscripciones, cuentas por cobrar, reportes y más. Rápido, sencillo y totalmente automatizado para negocios deportivos.",
     precio: 25,
+    categoria: "Deportes",
+    calificacion: 4.9,
+    hotSale: true,
+    ventas: 312,
     personalizacion: "",
     miniatura: "/img/GYM/GymPrincipal.png",
     imagenes: ["/img/GYM/Gym1.jpg", "/img/GYM/Gym2.jpg", "/img/GYM/Gym3.jpg"],
@@ -162,6 +215,10 @@ export const plantillas = [
     descripcionExtendida:
       "Gestión Deportiva y de Ligas te permite registrar jugadores y equipos con fotografías, generar carnets e imprimir fichas técnicas. Crea fixtures de ida y vuelta, lleva el control de resultados, goleadores, tarjetas y tabla de posiciones en tiempo real. También incluye control de cuotas y reportes financieros para academias o torneos locales.",
     precio: 17,
+    categoria: "Deportes",
+    calificacion: 4.8,
+    hotSale: false,
+    ventas: 145,
     personalizacion:
       "Se puede personalizar el formato de carnets, colores y tipo de fuente",
     miniatura: "/img/Futbol/FutbolPrincipal.png",
@@ -180,30 +237,5 @@ export const plantillas = [
       "https://pay.hotmart.com/D91501670N?off=2tteil39&bid=1762578520771",
     whatsappMessage:
       "Hola Excel Práctico, quiero implementar la plantilla Gestión Deportiva y de Ligas.",
-  },
-  {
-    id: "ginecologia-vba",
-    nombre: "Sistema Clínico para Ginecólogos en Excel",
-    descripcion:
-      "Administra de forma integral pacientes, historias clínicas, consultas y tratamientos ginecológicos.",
-    descripcionExtendida:
-      "El Sistema Clínico para Ginecólogos en Excel te permite llevar un control detallado de tus pacientes, gestionar historias clínicas, registrar consultas y hacer seguimiento de tratamientos. Ideal para consultorios ginecológicos que buscan digitalizar su gestión de manera rápida, segura y sin complicaciones.",
-    precio: 25,
-    personalizacion: "Se pueden personalizar logos y formatos de impresión para adaptarlo a tu consultorio.",
-    miniatura: "/img/Ginecologia/Principal.png",
-    imagenes: [
-      "/img/Ginecologia/imagen1.png",
-      "/img/Ginecologia/imagen2.png",
-      "/img/Ginecologia/imagen3.png",
-    ],
-    videoUrl: "https://www.youtube.com/embed/ITOTn7qa8Sw",
-    requisitos: [
-      "Windows 10 u 11 (64 bits recomendado).",
-      "Microsoft Excel 2016 o superior (versión de escritorio).",
-      "No compatibles con Mac, Excel Online ni Google Sheets.",
-    ],
-    hotmartLink: "https://pay.hotmart.com/X106052290S",
-    whatsappMessage:
-      "Hola Excel Práctico, deseo conocer más sobre la plantilla Sistema Clínico para Ginecólogos en Excel.",
   },
 ];

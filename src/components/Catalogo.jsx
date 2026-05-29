@@ -1,11 +1,24 @@
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { DollarSign } from "lucide-react"
+import { DollarSign, Search, Star, Flame } from "lucide-react"
 import { plantillas } from "../data/plantillas"
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card"
 import { ModalDetalles } from "./ModalDetalles"
 import { ModalComprar } from "./ModalComprar"
 
 export function Catalogo() {
+  const [searchTerm, setSearchTerm] = useState("")
+  const [activeCategory, setActiveCategory] = useState("Todas")
+
+  const categories = ["Todas", ...new Set(plantillas.map(p => p.categoria).filter(Boolean))]
+
+  const filteredPlantillas = plantillas.filter(plantilla => {
+    const matchesSearch = plantilla.nombre.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                          plantilla.descripcion.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesCategory = activeCategory === "Todas" || plantilla.categoria === activeCategory
+    return matchesSearch && matchesCategory
+  })
+
   return (
     <section id="catalogo" className="bg-white py-20 sm:py-28">
       <div className="container">
@@ -30,42 +43,96 @@ export function Catalogo() {
           </motion.h2>
         </div>
 
+        <div className="mt-8 flex flex-col items-center justify-center gap-6">
+          <div className="relative w-full max-w-md">
+            <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
+            <input 
+              type="text" 
+              placeholder="Buscar plantillas..." 
+              className="w-full rounded-full border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm focus:border-excel focus:outline-none focus:ring-1 focus:ring-excel"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  activeCategory === cat 
+                    ? "bg-excel text-white" 
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
-          {plantillas.map((plantilla, index) => (
-            <motion.div
-              key={plantilla.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Card className="flex h-full flex-col">
-                <CardHeader className="gap-4">
-                  <div className="relative overflow-hidden rounded-3xl bg-slate-100">
-                    <img
-                      src={plantilla.miniatura}
-                      alt={plantilla.nombre}
-                      className="aspect-[4/3] w-full object-contain transition duration-500 hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold text-excel">
-                      <DollarSign className="h-4 w-4" />
-                      ${plantilla.precio} USD
+          {filteredPlantillas.length > 0 ? (
+            filteredPlantillas.map((plantilla, index) => (
+              <motion.div
+                key={plantilla.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="flex h-full flex-col">
+                  <CardHeader className="gap-4">
+                    <div className="relative overflow-hidden rounded-3xl bg-slate-100">
+                      <img
+                        src={plantilla.miniatura}
+                        alt={plantilla.nombre}
+                        className="aspect-[4/3] w-full object-contain transition duration-500 hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold text-excel shadow-sm">
+                        <DollarSign className="h-4 w-4" />
+                        ${plantilla.precio} USD
+                      </div>
+                      {plantilla.hotSale && (
+                        <div className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white shadow-sm">
+                          <Flame className="h-4 w-4" />
+                          HOT SALE
+                        </div>
+                      )}
                     </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-900">{plantilla.nombre}</h3>
-                    <p className="mt-2 text-sm text-slate-600">{plantilla.descripcion}</p>
-                  </div>
-                </CardHeader>
-                <CardContent className="mt-auto" />
-                <CardFooter className="flex-col gap-3 sm:flex-row sm:items-center">
-                  <ModalDetalles plantilla={plantilla} />
-                  <ModalComprar hotmartLink={plantilla.hotmartLink} plantillaNombre={plantilla.nombre} />
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
+                    <div>
+                      <div className="mb-2 flex items-center justify-between">
+                        {plantilla.categoria && (
+                          <span className="text-xs font-semibold text-excel uppercase tracking-wider">{plantilla.categoria}</span>
+                        )}
+                        {plantilla.calificacion && (
+                          <div className="flex items-center gap-1">
+                            <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                            <span className="text-sm font-bold text-slate-700">
+                              {plantilla.calificacion}
+                              {plantilla.ventas && <span className="ml-1 text-xs font-normal text-slate-500">({plantilla.ventas})</span>}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                      <h3 className="text-xl font-semibold text-slate-900">{plantilla.nombre}</h3>
+                      <p className="mt-2 text-sm text-slate-600">{plantilla.descripcion}</p>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="mt-auto" />
+                  <CardFooter className="flex-col gap-3 sm:flex-row sm:items-center">
+                    <ModalDetalles plantilla={plantilla} />
+                    <ModalComprar hotmartLink={plantilla.hotmartLink} plantillaNombre={plantilla.nombre} />
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))
+          ) : (
+            <div className="col-span-full py-10 text-center text-slate-500">
+              No se encontraron plantillas que coincidan con la búsqueda.
+            </div>
+          )}
         </div>
       </div>
     </section>

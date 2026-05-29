@@ -181,4 +181,29 @@ export const plantillas = [
     whatsappMessage:
       "Hola Excel Práctico, quiero implementar la plantilla Gestión Deportiva y de Ligas.",
   },
+  {
+    id: "ginecologia-vba",
+    nombre: "Sistema Clínico para Ginecólogos en Excel",
+    descripcion:
+      "Administra de forma integral pacientes, historias clínicas, consultas y tratamientos ginecológicos.",
+    descripcionExtendida:
+      "El Sistema Clínico para Ginecólogos en Excel te permite llevar un control detallado de tus pacientes, gestionar historias clínicas, registrar consultas y hacer seguimiento de tratamientos. Ideal para consultorios ginecológicos que buscan digitalizar su gestión de manera rápida, segura y sin complicaciones.",
+    precio: 25,
+    personalizacion: "Se pueden personalizar logos y formatos de impresión para adaptarlo a tu consultorio.",
+    miniatura: "/img/Ginecologia/Principal.png",
+    imagenes: [
+      "/img/Ginecologia/imagen1.png",
+      "/img/Ginecologia/imagen2.png",
+      "/img/Ginecologia/imagen3.png",
+    ],
+    videoUrl: "https://www.youtube.com/embed/ITOTn7qa8Sw",
+    requisitos: [
+      "Windows 10 u 11 (64 bits recomendado).",
+      "Microsoft Excel 2016 o superior (versión de escritorio).",
+      "No compatibles con Mac, Excel Online ni Google Sheets.",
+    ],
+    hotmartLink: "https://pay.hotmart.com/X106052290S",
+    whatsappMessage:
+      "Hola Excel Práctico, deseo conocer más sobre la plantilla Sistema Clínico para Ginecólogos en Excel.",
+  },
 ];

@@ -1,5 +1,33 @@
 export const plantillas = [
   {
+    id: "dentasmile-app",
+    nombre: "DentaSmile - Software & App para Odontólogos",
+    descripcion:
+      "Gestiona pacientes, historias clínicas, odontogramas interactivos y citas desde tu celular, tablet o computadora en la nube.",
+    descripcionExtendida:
+      "DentaSmile es la solución digital integral para clínicas y consultorios odontológicos. Accede a tu información desde cualquier lugar con respaldo automático, odontograma digital interactivo y gestión completa de tratamientos y presupuestos.",
+    precio: 0,
+    etiquetaPrecio: "App Móvil & Web",
+    isApp: true,
+    categoria: "Apps Móviles",
+    calificacion: 5.0,
+    hotSale: false,
+    badge: "NUEVA APP",
+    ventas: 120,
+    miniatura: "/img/DentaSmile/ImagenHome.png",
+    mockupScreens: {
+      home: "/img/DentaSmile/ImagenHome.png",
+      odontograma: "/img/DentaSmile/Odontograma.png",
+    },
+    imagenes: [
+      "/img/DentaSmile/ImagenHome.png",
+      "/img/DentaSmile/Odontograma.png",
+    ],
+    landingUrl: "https://dentasmile.vercel.app/",
+    whatsappMessage:
+      "Hola Excel Práctico, quiero más información sobre la aplicación DentaSmile para odontólogos.",
+  },
+  {
     id: "ginecologia-vba",
     nombre: "Sistema Clínico para Ginecólogos en Excel",
     descripcion:

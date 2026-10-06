@@ -1,5 +1,22 @@
 export const plantillas = [
   {
+    id: "grada-windows",
+    nombre: "GRADA - Gestión de ligas y torneos de fútbol",
+    descripcion:
+      "Organiza equipos, jugadores, torneos y resultados. Genera carnets y hojas de vocalía desde un programa para Windows, sin necesitar Excel.",
+    precio: 25,
+    mostrarDescuento: false,
+    tipoProducto: "software",
+    categoria: "Deportes",
+    badge: "NUEVO",
+    etiquetaPlataforma: "Windows · Pago único",
+    miniatura: "/img/Grada/GradaCatalogo.png",
+    landingUrl: "https://futbolgrada.vercel.app/",
+    hotmartLink: "https://pay.hotmart.com/B107909329H",
+    whatsappMessage:
+      "Hola Excel Práctico, me interesa GRADA para gestionar ligas y torneos de fútbol. El precio es de 25 USD.",
+  },
+  {
     id: "dentasmile-app",
     nombre: "DentaSmile - Software & App para Odontólogos",
     descripcion:
@@ -235,35 +252,4 @@ export const plantillas = [
       "Hola Excel Práctico, me interesa controlar mi gimnasio con la plantilla GymControl Pro Software para Gestión de Gimnasios.",
   },
 
-  {
-    id: "futbol-vba",
-    nombre: "Gestión Deportiva y de Ligas",
-    descripcion:
-      "Administra jugadores, equipos, fixtures, estadísticas y finanzas de escuelas o ligas de fútbol.",
-    descripcionExtendida:
-      "Gestión Deportiva y de Ligas te permite registrar jugadores y equipos con fotografías, generar carnets e imprimir fichas técnicas. Crea fixtures de ida y vuelta, lleva el control de resultados, goleadores, tarjetas y tabla de posiciones en tiempo real. También incluye control de cuotas y reportes financieros para academias o torneos locales.",
-    precio: 17,
-    categoria: "Deportes",
-    calificacion: 4.8,
-    hotSale: false,
-    ventas: 145,
-    personalizacion:
-      "Se puede personalizar el formato de carnets, colores y tipo de fuente",
-    miniatura: "/img/Futbol/FutbolPrincipal.png",
-    imagenes: [
-      "/img/Futbol/Futbol1.jpg",
-      "/img/Futbol/Futbol2.jpg",
-      "/img/Futbol/Futbol3.jpg",
-    ],
-    videoUrl: "https://www.youtube.com/embed/39pUNVaBfMc",
-    requisitos: [
-      "Windows 10 u 11 (64 bits recomendado).",
-      "Microsoft Excel 2016 o superior (versión de escritorio).",
-      "No compatibles con Mac, Excel Online ni Google Sheets.",
-    ],
-    hotmartLink:
-      "https://pay.hotmart.com/D91501670N?off=2tteil39&bid=1762578520771",
-    whatsappMessage:
-      "Hola Excel Práctico, quiero implementar la plantilla Gestión Deportiva y de Ligas.",
-  },
 ];

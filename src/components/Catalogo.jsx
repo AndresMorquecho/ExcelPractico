@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion as Motion } from "framer-motion"
 import { DollarSign, Search, Star, Flame, ExternalLink, Sparkles, Smartphone } from "lucide-react"
 import { plantillas } from "../data/plantillas"
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card"
@@ -24,16 +24,16 @@ export function Catalogo() {
     <section id="catalogo" className="bg-white py-20 sm:py-28">
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
-          <motion.span
+          <Motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="text-sm font-semibold uppercase tracking-[0.3em] text-excel"
           >
-            Catálogo de Plantillas
-          </motion.span>
-          <motion.h2
+            Catálogo de plantillas y programas
+          </Motion.span>
+          <Motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -41,7 +41,7 @@ export function Catalogo() {
             className="mt-4 text-3xl font-semibold text-slate-900 sm:text-4xl"
           >
             Soluciones profesionales listas para implementar
-          </motion.h2>
+          </Motion.h2>
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-6">
@@ -49,7 +49,8 @@ export function Catalogo() {
             <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
             <input 
               type="text" 
-              placeholder="Buscar plantillas..." 
+              placeholder="Buscar plantillas o programas..."
+              aria-label="Buscar en el catálogo"
               className="w-full rounded-full border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm focus:border-excel focus:outline-none focus:ring-1 focus:ring-excel"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -75,7 +76,7 @@ export function Catalogo() {
         <div className="mt-16 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
           {filteredPlantillas.length > 0 ? (
             filteredPlantillas.map((plantilla, index) => (
-              <motion.div
+              <Motion.div
                 key={plantilla.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -138,7 +139,9 @@ export function Catalogo() {
                         {plantilla.precio > 0 ? (
                           <div className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-excel shadow-sm">
                             <DollarSign className="h-4 w-4" />
-                            <span className="line-through text-slate-400 font-medium">${plantilla.precio * 2}</span>
+                            {plantilla.mostrarDescuento !== false && (
+                              <span className="line-through text-slate-400 font-medium">${plantilla.precio * 2}</span>
+                            )}
                             ${plantilla.precio} USD
                           </div>
                         ) : (
@@ -177,12 +180,25 @@ export function Catalogo() {
                         )}
                       </div>
                       <h3 className="text-xl font-semibold text-slate-900">{plantilla.nombre}</h3>
+                      {plantilla.etiquetaPlataforma && (
+                        <p className="mt-2 text-xs font-semibold text-excel">{plantilla.etiquetaPlataforma}</p>
+                      )}
                       <p className="mt-2 text-sm text-slate-600">{plantilla.descripcion}</p>
                     </div>
                   </CardHeader>
                   <CardContent className="mt-auto" />
                   <CardFooter className="flex-col gap-3 sm:flex-row sm:items-center">
-                    {plantilla.isApp || plantilla.landingUrl ? (
+                    {plantilla.landingUrl && plantilla.hotmartLink ? (
+                      <>
+                        <Button asChild variant="outline">
+                          <a href={plantilla.landingUrl} target="_blank" rel="noopener noreferrer">
+                            Más detalles
+                            <ExternalLink className="ml-1.5 h-3.5 w-3.5" aria-hidden="true" />
+                          </a>
+                        </Button>
+                        <ModalComprar hotmartLink={plantilla.hotmartLink} plantillaNombre={plantilla.nombre} tipoProducto={plantilla.tipoProducto} precio={plantilla.precio} />
+                      </>
+                    ) : plantilla.isApp || plantilla.landingUrl ? (
                       <Button asChild className="w-full">
                         <a
                           href={plantilla.landingUrl}
@@ -202,11 +218,11 @@ export function Catalogo() {
                     )}
                   </CardFooter>
                 </Card>
-              </motion.div>
+              </Motion.div>
             ))
           ) : (
             <div className="col-span-full py-10 text-center text-slate-500">
-              No se encontraron plantillas que coincidan con la búsqueda.
+              No se encontraron productos que coincidan con la búsqueda.
             </div>
           )}
         </div>

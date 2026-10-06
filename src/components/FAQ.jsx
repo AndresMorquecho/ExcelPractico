@@ -3,6 +3,10 @@ import { ChevronDown } from "lucide-react"
 
 const faqs = [
   {
+    pregunta: "¿GRADA necesita Microsoft Excel?",
+    respuesta: "No. GRADA es un programa independiente para Windows de 64 bits. Su licencia cuesta 25 USD, es de pago único para una computadora y necesita internet para activarse y verificarse al menos cada 7 días. El demo dura 48 horas y no requiere conexión.",
+  },
+  {
     pregunta: "¿Necesito saber programar en Excel o VBA?",
     respuesta: "No, para nada. Las plantillas vienen totalmente listas para usar. Solo abres el archivo y empiezas a registrar tus datos a través de los formularios intuitivos.",
   },
